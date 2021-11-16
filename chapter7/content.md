@@ -43,7 +43,7 @@ function createPerson(name){
 ## Builder 패턴
 - 유창한 인터페이스를 제공하여 복잡한 객체의 생성을 단순화하는 생성 디자인 패턴, 단계별로 객체를 생성할 수 있음
 - 인자의 목록이 길거나, 많은 매개변수를 입력으로 사용하는 생성자가 있는 클래스에 사용하는 것이 유용함
-- 복잡한 생성자를 더 읽기 쉽고 관리하기 쉬운 여러 단계로 
+- 복잡한 생성자를 더 읽기 쉽고 관리하기 쉬운 여러 단계로 나눔
 
 ```javascript
   class BoatBuilder{
@@ -105,7 +105,7 @@ function createPerson(name){
   const MODIFIER_NAMES = ['swap','write','fill']
   
   export class ImmutableBuffer{
-    constructor(size,buffer){
+    constructor(size,executor){
       const buffer = Buffer.alloc(size) // 생성자의 인자에 지정된 크기의 버퍼를 할당
       const modifier ={}  // buffer를 변경할 수 있는 함수들을 보관하는 객체 리터럴 생성
       for (const prop in buffer){ // buffer 내부의 모든 속성들을 차례로 살펴보면서 함수가 아닌 속성은 건너뜀
